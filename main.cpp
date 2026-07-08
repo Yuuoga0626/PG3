@@ -1,43 +1,59 @@
-#include<iostream>
-#include<Windows.h>
+#include <iostream>
+#include <Windows.h>
+#include <ctime>
 
-template<typename T>
-T Min(T a, T b) {
-	if (a < b) {
-		return a;
-	}
-	else {
-		return b;
-	}
-}
-//char型
-template<>
-char Min(char a, char b) {
-	printf("数字以外を代入できません\n");
-	return 0;
+void Correct()
+{
+    std::cout << "正解です！\n";
 }
 
-int main() {
+void Incorrect()
+{
+    std::cout << "不正解です...\n";
+}
 
-	SetConsoleOutputCP(65001);
-	
-	int i1 = 10;
-	int i2 = 5;
+void Judge(bool result, void(*callback)())
+{
+    Sleep(3000);
 
-	float f1 = 3.5f;
-	float f2 = 7.2f;
+    if (result)
+    {
+        callback();
+    }
+}
 
-	double d1 = 8.9;
-	double d2 = 7.5;
+int main()
+{
+    srand((unsigned int)time(nullptr));
 
-	char c1 = 'A';
-	char c2 = 'B';
+    int input;
 
-	printf("%d\n", Min(i1, i2));
-	printf("%.1f\n", Min(f1, f2));
-	printf("%.1lf\n", Min(d1, d2));
+    std::cout << "半(1) 丁(2) を入力してください：";
+    std::cin >> input;
 
-	Min(c1, c2);
+    int dice = rand() % 6 + 1;
 
-	return 0;
+    std::cout << "サイコロ：" << dice << std::endl;
+
+    bool answer;
+
+    if (dice % 2 == 1)
+    {
+        answer = (input == 1);
+    }
+    else
+    {
+        answer = (input == 2);
+    }
+
+    if (answer)
+    {
+        Judge(true, Correct);
+    }
+    else
+    {
+        Judge(true, Incorrect);
+    }
+
+    return 0;
 }
