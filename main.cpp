@@ -1,43 +1,44 @@
 #include<iostream>
 #include<Windows.h>
 
-template<typename T>
-T Min(T a, T b) {
-	if (a < b) {
-		return a;
+int Saiki(int hour) {
+	if (hour == 1) {
+		return 100;
 	}
-	else {
-		return b;
-	}
-}
-//char型
-template<>
-char Min(char a, char b) {
-	printf("数字以外を代入できません\n");
-	return 0;
+
+	return Saiki(hour - 1) * 2 - 50;
 }
 
 int main() {
 
-	SetConsoleOutputCP(65001);
+	//SetConsoleOutputCP(65001);
 	
-	int i1 = 10;
-	int i2 = 5;
+	int totalsaiki = 0;
+	int hour;
 
-	float f1 = 3.5f;
-	float f2 = 7.2f;
+	std::cout << "働く時間を入力してください : ";
+	std::cin >> hour;
+	
+	std::cout << hour << "時間働いた場合" << std::endl;
 
-	double d1 = 8.9;
-	double d2 = 7.5;
+	for (int i = 1; i <= hour; i++) {
+		totalsaiki += Saiki(i);
+	}
 
-	char c1 = 'A';
-	char c2 = 'B';
+	int totaltingin = 1072 * hour;
 
-	printf("%d\n", Min(i1, i2));
-	printf("%.1f\n", Min(f1, f2));
-	printf("%.1lf\n", Min(d1, d2));
+	std::cout << "一般 : " << totaltingin << std::endl;
+	std::cout << "再帰 : " << totalsaiki << std::endl;
 
-	Min(c1, c2);
+	if (totalsaiki > totaltingin) {
+		std::cout << "再帰的な賃金体系の方が高いです。" << std::endl;
+	}
+	else if (totalsaiki < totaltingin) {
+		std::cout << "一般的な賃金体系の方が高いです。" << std::endl;
+	}
+	else {
+		std::cout << "同じ金額です。" << std::endl;
+	}
 
 	return 0;
 }
