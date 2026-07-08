@@ -13,13 +13,13 @@ T Min(T a, T b) {
 //char型
 template<>
 char Min(char a, char b) {
-	printf("数字以外を代入できません\n");
+	printf("数字以外は代入できません\n");
 	return 0;
 }
 
 int main() {
 
-	SetConsoleOutputCP(65001);
+	//SetConsoleOutputCP(65001);
 	
 	int i1 = 10;
 	int i2 = 5;
