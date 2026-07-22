@@ -33,13 +33,25 @@
           "SelectedChildIndex": 7,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Rectangle.h",
               "DocumentMoniker": "C:\\Users\\yuich\\Desktop\\PG1\\PG3_00_01\\Rectangle.h",
               "RelativeDocumentMoniker": "Rectangle.h",
-              "ToolTip": "C:\\Users\\yuich\\Desktop\\PG1\\PG3_00_01\\Rectangle.h*",
-              "RelativeToolTip": "Rectangle.h*",
+              "ToolTip": "C:\\Users\\yuich\\Desktop\\PG1\\PG3_00_01\\Rectangle.h",
+              "RelativeToolTip": "Rectangle.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-07-22T06:31:35.278Z",
@@ -57,18 +69,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-07-22T05:55:29.488Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Document",
@@ -102,8 +102,8 @@
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\yuich\\Desktop\\PG1\\PG3_00_01\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
-              "ToolTip": "C:\\Users\\yuich\\Desktop\\PG1\\PG3_00_01\\main.cpp*",
-              "RelativeToolTip": "main.cpp*",
+              "ToolTip": "C:\\Users\\yuich\\Desktop\\PG1\\PG3_00_01\\main.cpp",
+              "RelativeToolTip": "main.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-05-20T07:33:47.814Z",
