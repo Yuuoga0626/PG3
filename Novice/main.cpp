@@ -1,4 +1,7 @@
 #include <Novice.h>
+#include "TitleScene.h"
+#include "StageScene.h"
+#include "ClearScene.h"
 
 const char kWindowTitle[] = "学籍番号";
 
@@ -7,6 +10,10 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR, _In_ int) {
 
 	// ライブラリの初期化
 	Novice::Initialize(kWindowTitle, 1280, 720);
+
+	Scene* scene = new TitleScene();
+
+	int sceneNo = 0;
 
 	// キー入力結果を受け取る箱
 	char keys[256] = {0};
@@ -24,7 +31,23 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR, _In_ int) {
 		///
 		/// ↓更新処理ここから
 		///
+		scene->Update(keys, preKeys);
 
+		if (scene->IsEnd()) {
+
+			delete scene;
+
+			if (sceneNo == 0) {
+				scene = new StageScene();
+				sceneNo = 1;
+			} else if (sceneNo == 1) {
+				scene = new ClearScene();
+				sceneNo = 2;
+			} else {
+				scene = new TitleScene();
+				sceneNo = 0;
+			}
+		}
 		///
 		/// ↑更新処理ここまで
 		///
@@ -32,7 +55,7 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR, _In_ int) {
 		///
 		/// ↓描画処理ここから
 		///
-
+		scene->Draw();
 		///
 		/// ↑描画処理ここまで
 		///
