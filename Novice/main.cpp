@@ -1,12 +1,18 @@
 #include <Novice.h>
+#include"Scene.h"
 
-const char kWindowTitle[] = "学籍番号";
+const char kWindowTitle[] = "GC2B_01_オガタ_ユウイチ";
 
 // Windowsアプリでのエントリーポイント(main関数)
 int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR, _In_ int) {
 
 	// ライブラリの初期化
 	Novice::Initialize(kWindowTitle, 1280, 720);
+
+	Scene* scene = new Scene();
+	scene->Initialize();
+
+
 
 	// キー入力結果を受け取る箱
 	char keys[256] = {0};
@@ -24,7 +30,7 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR, _In_ int) {
 		///
 		/// ↓更新処理ここから
 		///
-
+		scene->Update();
 		///
 		/// ↑更新処理ここまで
 		///
@@ -32,7 +38,7 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR, _In_ int) {
 		///
 		/// ↓描画処理ここから
 		///
-
+		scene->Draw();
 		///
 		/// ↑描画処理ここまで
 		///
